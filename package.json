@@ -1,0 +1,46 @@
+{
+  "name": "superglue.js",
+  "version": "0.0.1",
+  "description": "Web framework bringing superviews.js and supermodels.js together",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "browserify test/index.js -t [superviewify --argstr model] -o test/bundle.js -d",
+    "minify": "uglifyjs test/bundle.js --screw-ie8 --mangle > test/bundle.min.js",
+    "watch": "watchify test/index.js -t [superviewify --argstr model] -o test/bundle.js -d",
+    "build": "npm run bundle && npm run minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidjamesstone/superglue.js.git"
+  },
+  "keywords": [
+    "SPA",
+    "web",
+    "framework",
+    "superviews.js",
+    "supermodels.js",
+    "events",
+    "delegation",
+    "router"
+  ],
+  "author": "djs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidjamesstone/superglue.js/issues"
+  },
+  "homepage": "https://github.com/davidjamesstone/superglue.js#readme",
+  "dependencies": {
+    "incremental-dom": "git+https://github.com/davidjamesstone/incremental-dom.git",
+    "supermodels.js": "^0.0.7",
+    "superviewify": "0.0.2"
+  },
+  "devDependencies": {
+    "array.prototype.find": "^1.0.0",
+    "array.prototype.findindex": "^1.0.0",
+    "browserify": "^11.0.1",
+    "superviewify": "0.0.1",
+    "uglifyjs": "^2.4.10",
+    "watchify": "^3.4.0"
+  }
+}
