@@ -1,7 +1,7 @@
 {
   "name": "superglue.js",
   "version": "0.0.1",
-  "description": "Web framework bringing superviews.js and supermodels.js together",
+  "description": "Simple web application platform using superviews.js and supermodels.js together with browserify",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
