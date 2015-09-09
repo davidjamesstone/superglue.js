@@ -16,4 +16,7 @@ window.elementClose = elementClose
 window.text = text
 
 var basket = require('./basket')
-basket(document.getElementById('mount'))
+var todo = require('./todo')
+
+window.basket = basket
+window.todo = todo
