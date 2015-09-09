@@ -17,4 +17,3 @@ window.text = text
 
 var basket = require('./basket')
 basket(document.getElementById('mount'))
-basket(document.getElementById('mount1'))
