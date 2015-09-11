@@ -1,11 +1,13 @@
 var supermodels = require('supermodels.js')
 var patch = require('../incremental-dom').patch
+var helpers = require('../helpers')
 var template = require('./template.html')
 var productsData = require('./products-data')
 var basketData = require('./basket-data')
 
 var productSchema = {
-  productId: String,
+  id: helpers.rndstr,
+  productId: helpers.rndstr,
   productName: String,
   price: Number,
   image: String,
@@ -17,6 +19,7 @@ var productSchema = {
 var productsSchema = [productSchema]
 var basketSchema = {
   items: [{
+    id: helpers.rndstr,
     productId: String,
     quantity: Number,
     get cost () {

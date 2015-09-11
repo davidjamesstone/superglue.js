@@ -28,6 +28,7 @@
 <table>
   <thead>
     <tr>
+      <th>id</th>
       <th>productId</th>
       <th>productName</th>
       <th>quantity</th>
@@ -43,14 +44,15 @@
   </thead>
   <tbody>
     <tr each="item, item.id in basket.items">
-      <td onclick="{add}">{item.product.productId}</td>
+      <td>{item.id}</td>
+      <td>{item.product.productId}</td>
       <td>{item.product.productName}</td>
-      <td><input type="number" value="{item.quantity}" onchange="{=> item.quantity = this.value}"></td>
+      <td><input type="number" value="{item.quantity}" onchange="{=>   item.quantity = this.value }"></td>
       <td>{item.product.price}</td>
       <td>{item.product.discountPercent * 100 + ' %'}</td>
       <td>{item.cost.toFixed(2)}</td>
       <td>
-        <button onclick="{=> remove($index) }">Remove</button>
+        <button onclick="{= function() {remove($index)} }">Remove</button>
       </td>
     </tr>
   <tbody>
