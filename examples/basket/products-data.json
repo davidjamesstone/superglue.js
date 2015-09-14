@@ -4,20 +4,20 @@
     "productName": "Apple iPod touch 32GB 5th Generation - White",
     "price": 190.50,
     "discountPercent": 0,
-    "image": "http://ecx.images-amazon.com/images/I/31Y0DrM4ZNL._SY355_.jpg"
+    "image": "basket/img/apple.jpg"
   },
   {
     "productId": "dr6hb",
     "productName": "Samsung Galaxy Tab 3 7-inch - (Black, Wi-Fi)",
     "price": 110,
     "discountPercent": 0.2,
-    "image": "http://ecx.images-amazon.com/images/I/81aaDjlcU4L._SL1500_.jpg"
+    "image": "basket/img/samsung.jpg"
   },
   {
     "productId": "sdr4f",
     "productName": "Bose QuietComfort 20 Acoustic Noise Cancelling Headphones",
     "price": 250,
     "discountPercent": 0.125,
-    "image": "http://ecx.images-amazon.com/images/I/61XaVWVyNNL._SL1500_.jpg"
+    "image": "basket/img/bose.jpg"
   }
 ]

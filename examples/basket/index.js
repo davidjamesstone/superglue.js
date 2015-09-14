@@ -6,7 +6,6 @@ var productsData = require('./products-data')
 var basketData = require('./basket-data')
 
 var productSchema = {
-  id: helpers.rndstr,
   productId: helpers.rndstr,
   productName: String,
   price: Number,
@@ -20,7 +19,7 @@ var productsSchema = [productSchema]
 var basketSchema = {
   items: [{
     id: helpers.rndstr,
-    productId: String,
+    productId: helpers.rndstr,
     quantity: Number,
     get cost () {
       var product = this.product
@@ -29,7 +28,11 @@ var basketSchema = {
     get product () {
       var id = this.productId
 
-      return this.__ancestors[this.__ancestors.length - 1].products.filter(function (item) {
+      // This function looks up the product from the products list. We can get the list of products
+      // by looking up to the root of the object (the last ancestor) which in our case is the `app` model instance.
+      // While this object traversal is possible using supermodels.js, it's only here for the purposes of the example.
+      var app = this.__ancestors[this.__ancestors.length - 1]
+      return app.products.filter(function (item) {
         return item.productId === id
       })[0]
     }
@@ -77,6 +80,7 @@ module.exports = function (el) {
   }
   render()
 
+  /* patch the dom whenever the app model changes. */
   app.on('change', render)
 
   window.apps.push(app)

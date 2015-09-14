@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "browserify test/index.js -t [superviewify --argstr model] -o test/bundle.js -d",
-    "minify": "uglifyjs test/bundle.js --screw-ie8 --mangle > test/bundle.min.js",
-    "watch": "watchify test/index.js -t [superviewify --argstr model] -o test/bundle.js -d",
-    "build": "npm run bundle && npm run minify",
-    "build:js": "browserify index.js -o test/bundle.js -d"
+    "bundle": "browserify examples/index.js -t superviewify -o examples/bundle.js -d",
+    "minify": "uglifyjs examples/bundle.js --screw-ie8 --mangle > examples/bundle.min.js",
+    "watch": "watchify examples/index.js -t [superviewify] -o examples/bundle.js -d",
+    "build": "npm run bundle && npm run minify"
   },
   "repository": {
     "type": "git",
@@ -34,11 +33,9 @@
   "dependencies": {
     "incremental-dom": "git+https://github.com/davidjamesstone/incremental-dom.git",
     "supermodels.js": "^0.0.7",
-    "superviewify": "0.0.4"
+    "superviewify": "0.0.5"
   },
   "devDependencies": {
-    "array.prototype.find": "^1.0.0",
-    "array.prototype.findindex": "^1.0.0",
     "browserify": "^11.0.1",
     "uglifyjs": "^2.4.10",
     "watchify": "^3.4.0"
