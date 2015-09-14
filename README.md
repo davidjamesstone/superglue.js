@@ -4,7 +4,7 @@ Example using superviews.js and supermodels.js together with browserify
 
 `npm install superglue.js`
 
-(Homepage)[http://davidjamesstone.github.io/superglue.js/]
+[Homepage](http://davidjamesstone.github.io/superglue.js/)
 
 ## Examples
 
