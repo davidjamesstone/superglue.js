@@ -9,7 +9,6 @@ var text = IncrementalDOM.text
 var basket = require('./basket')
 var todo = require('./todo')
 
-
 window.patch = patch
 window.elementOpen = elementOpen
 window.elementVoid = elementVoid
