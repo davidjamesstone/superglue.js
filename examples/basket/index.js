@@ -17,6 +17,7 @@ var productSchema = {
 }
 var productsSchema = [productSchema]
 var basketSchema = {
+  sortBy: String,
   items: [{
     id: helpers.rndstr,
     productId: helpers.rndstr,
@@ -54,6 +55,22 @@ var basketSchema = {
     }
 
     return total
+  },
+  get sortedItems () {
+    var items = this.items.slice()
+    var sortBy = this.sortBy
+
+    items.sort(function (a, b) {
+      if (a[sortBy] < b[sortBy]) {
+        return -1
+      }
+      if (a[sortBy] > b[sortBy]) {
+        return 1
+      }
+      return 0
+    })
+
+    return items
   }
 }
 

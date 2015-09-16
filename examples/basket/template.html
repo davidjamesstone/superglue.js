@@ -8,9 +8,13 @@
     function add (product) {
       var items = basket.items
 
-      var existing = items.find(function (item) {
-        return item.productId === product.productId
-      })
+      var existing;
+      for (var i = 0; i < basket.items.length; i++) {
+        if (basket.items[i].productId === product.productId) {
+          existing = basket.items[i]
+          break
+        }
+      }
 
       if (existing) {
         existing.quantity++
@@ -25,7 +29,21 @@
     function remove ($index) {
       basket.items.splice($index, 1)
     }
+
+    var sortBy = basket.sortBy
+    var sortByTerms = ['cost', 'quantity', 'productId']
+
   </script>
+
+  <select onchange="{basket.sortBy = this.value}" class="pull-right">
+    <option>Sort by:</option>
+    <option each="term in sortByTerms" value="{term}">{term}</option>
+  </select>
+
+  <script>
+    linesSummary(basket)
+  </script>
+
   <table class="table" if="basket.items.length">
     <thead>
       <tr>
@@ -36,15 +54,11 @@
         <th>price</th>
         <th>discountPercent</th>
         <th>cost</th>
-        <th>
-          <script>
-            linesSummary(basket)
-          </script>
-        </th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-      <tr each="item, item.id in basket.items">
+      <tr each="item, item.id in basket.sortedItems">
         <td>{item.id}</td>
         <td>{item.product.productId}</td>
         <td>{item.product.productName}</td>
@@ -61,11 +75,7 @@
       totalSummary(basket)
     </script>
   </table>
-
-
-  <if condition="!basket.items.length">
-    You have no items in your basket!
-  </if>
+  <div if="!basket.items.length" class="alert alert-info">You have no items in your basket!</div>
 
   <div each="product in products" style="width: 33%; float: left;">
     <div>{product.productId}</div>

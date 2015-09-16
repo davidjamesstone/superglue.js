@@ -1,0 +1,22 @@
+<todo-lists args="lists">
+  <script>
+  var todo = require('./todo.html')
+
+  function addNewList () {
+    var newList = lists.create()
+    lists.push(newList)
+  }
+
+  </script>
+
+  <div class="clearfix">
+    <div each="list in lists" style="width: 33%; float: left; height: 300px; overflow: auto; padding: 5px; border: 1px dashed #666;">
+      <script>
+        todo(list)
+      </script>
+    </div>
+  </div>
+  <button onclick="{addNewList()}" class="btn btn-sm btn-success">Add new todo list</button>
+  <pre>{JSON.stringify(lists, null, 2)}</pre>
+
+</todos>

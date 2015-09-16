@@ -46,18 +46,17 @@
     <tbody>
     <tr each="todo, todo.id in todos">
       <td>{$index + 1}.</td>
-      <td><input type="text" value="{todo.text}" onkeyup="{todo.text = this.value}" class="form-control" style="{ borderColor: todo.text ? '': 'red', textDecoration: todo.completed ? 'line-through': '' }"></td>
+      <td><input type="text" value="{todo.text}" onkeyup="{todo.text = this.value}" class="form-control"
+        style="{ borderColor: todo.text ? '': 'red', textDecoration: todo.completed ? 'line-through': '' }"></td>
       <td><input type="checkbox" checked="{todo.completed || undefined}" onchange="{todo.completed = this.checked}"></td>
     <tr>
     </tbody>
     <tfoot>
       <tr>
         <td>Total {todos.length}</td>
-        <td></td>
-        <td><button if="totalCompleted()" onclick="{clearCompleted()}" class="btn btn-sm btn-danger">Clear completed {totalCompleted()}</button></td>
+        <td colspan="2"><button if="totalCompleted()" onclick="{clearCompleted()}" class="btn btn-sm btn-danger pull-right">Clear completed {totalCompleted()}</button></td>
       </tr>
     </tfoot>
   </table>
 
-  <pre>{JSON.stringify(todos, null, 2)}</pre>
 </todos>
