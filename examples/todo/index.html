@@ -1,4 +1,5 @@
-<todo-lists args="lists">
+<template name="todoLists" args="lists">
+  
   <script>
   var todo = require('./todo.html')
 
@@ -19,4 +20,4 @@
   <button onclick="{addNewList()}" class="btn btn-sm btn-success">Add new todo list</button>
   <pre>{JSON.stringify(lists, null, 2)}</pre>
 
-</todos>
+</template>

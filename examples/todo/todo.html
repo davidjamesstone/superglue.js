@@ -1,4 +1,4 @@
-<todos args="todos">
+<template name="todos" args="todos">
   <script>
 
   function add (form) {
@@ -40,7 +40,7 @@
             <input type="text" name="newTodo" class="form-control" placeholder="Enter new todo">
           </form>
         </td>
-        <!-- <td><input type="checkbox" onchange="{toggleCompleted(this.checked)}"></td> -->
+        <td><input type="checkbox" onchange="{toggleCompleted(this.checked)}"></td>
       </tr>
     </thead>
     <tbody>
@@ -48,7 +48,7 @@
       <td>{$index + 1}.</td>
       <td><input type="text" value="{todo.text}" onkeyup="{todo.text = this.value}" class="form-control"
         style="{ borderColor: todo.text ? '': 'red', textDecoration: todo.completed ? 'line-through': '' }"></td>
-      <td><input type="checkbox" checked="{todo.completed || undefined}" onchange="{todo.completed = this.checked}"></td>
+      <td><input type="checkbox" checked="{todo.completed}" onchange="{todo.completed = this.checked}"></td>
     <tr>
     </tbody>
     <tfoot>
@@ -59,4 +59,4 @@
     </tfoot>
   </table>
 
-</todos>
+</template>

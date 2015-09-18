@@ -1,5 +1,5 @@
 var list = require('./index.html')
-var patch = require('../incremental-dom').patch
+var patch = require('incremental-dom').patch
 var supermodels = require('supermodels.js')
 var helpers = require('../helpers')
 
@@ -12,8 +12,6 @@ var Todos = supermodels([Todo])
 var Lists = supermodels([Todos])
 
 module.exports = function (el) {
-  //var todos = new Todos()
-
   var lists = new Lists([[
     {
       text: 'Phone mum',
@@ -28,6 +26,7 @@ module.exports = function (el) {
       completed: true
     }
   ]])
+
   function render () {
     patch(el, list, lists)
   }

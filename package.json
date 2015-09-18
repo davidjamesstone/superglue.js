@@ -33,7 +33,7 @@
   "dependencies": {
     "incremental-dom": "git+https://github.com/davidjamesstone/incremental-dom.git",
     "supermodels.js": "^0.0.7",
-    "superviewify": "0.0.5"
+    "superviewify": "^0.0.7"
   },
   "devDependencies": {
     "browserify": "^11.0.1",

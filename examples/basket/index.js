@@ -1,5 +1,5 @@
 var supermodels = require('supermodels.js')
-var patch = require('../incremental-dom').patch
+var patch = require('incremental-dom').patch
 var helpers = require('../helpers')
 var template = require('./template.html')
 var productsData = require('./products-data')
