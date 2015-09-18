@@ -1,6 +1,6 @@
 {
   "name": "superglue.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple web application platform using superviews.js and supermodels.js together with browserify",
   "main": "index.js",
   "scripts": {
@@ -20,9 +20,7 @@
     "framework",
     "superviews.js",
     "supermodels.js",
-    "events",
-    "delegation",
-    "router"
+    "incremental-dom"
   ],
   "author": "djs",
   "license": "ISC",
