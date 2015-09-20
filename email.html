@@ -1,0 +1,40 @@
+
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+<a href="https://github.com/davidjamesstone/superglue.js/tree/master/test/email">View code on github</a>
+<style>
+  .emails {
+    border: aliceblue 1px solid
+  }
+  .email {
+    padding: 2px;
+  }
+  .email > .row > div {
+    overflow: auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+  }
+  .email .well {
+    background-color: #fff;
+  }
+  .email pre {
+    max-height: 300px;
+    overflow: auto;
+  }
+  .email:nth-child(odd) {
+    background-color: #E4F9F9;
+  }
+  .email.checked > div.row:first-child {
+    font-weight: bold;
+  }
+  .email-details {
+    padding: 10px;
+  }
+</style>
+
+<div id="mount"></div>
+<script src="bundle.js"></script>
+<script>
+emailClient(document.getElementById('mount'))
+</script>
