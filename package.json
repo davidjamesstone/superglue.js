@@ -1,6 +1,6 @@
 {
   "name": "superglue.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple web application platform using superviews.js and supermodels.js together with browserify",
   "main": "index.js",
   "scripts": {
@@ -31,7 +31,7 @@
   "dependencies": {
     "incremental-dom": "git+https://github.com/davidjamesstone/incremental-dom.git",
     "supermodels.js": "^0.0.7",
-    "superviewify": "^0.0.7"
+    "superviewify": "^0.0.8"
   },
   "devDependencies": {
     "browserify": "^11.0.1",

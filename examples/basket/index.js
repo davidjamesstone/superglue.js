@@ -84,8 +84,6 @@ var appSchema = {
 
 var App = supermodels(appSchema)
 
-window.apps = []
-
 module.exports = function (el) {
   var app = new App({
     basket: new Basket(basketData),
@@ -99,6 +97,4 @@ module.exports = function (el) {
 
   /* patch the dom whenever the app model changes. */
   app.on('change', render)
-
-  window.apps.push(app)
 }

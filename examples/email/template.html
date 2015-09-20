@@ -1,0 +1,78 @@
+<template args="model">
+  <script>
+  var o = {
+    "sender": "rosalee.fleming@enron.com",
+    "recipients": [
+      "jaime.alatorre@enron.com",
+      "myzagui@ect.enron.com",
+      "steven.kean@enron.com",
+      "myzagui@ect.enron.com",
+      "steven.kean@enron.com"
+    ],
+    "cc": [
+      "myzagui@ect.enron.com",
+      "steven.kean@enron.com"
+    ],
+    "text": "Hi Jaime -\n\nThanks for the information about the dinner.  Ken said that he would be \nflying from Aspen to New York (or Washington, if that's the city).  He said \nhe would very much like to meet with you for 30 - 45 minutes before the \ndinner for a briefing.  \n\nThanks.\n\nRosie \n\n\n\n\nJaime Alatorre\n08/08/2000 10:33 AM\nSent by: Jaime Alatorre\nTo: Kenneth Lay/Corp/Enron@ENRON\ncc: myzagui@ect.enron.com, Steven J Kean/HOU/EES@EES \nSubject: Dinner with V. Fox\n\nDear Ken,\n Federico Sada, who is travelling with President elect Vicente Fox in South \nAmerica, called me this morning, \nand asked me to give you the confirmed list of attendees to the dinner in New \nYork, Wednesday August 23, 8:00 P.M.\nat the Watteau Room of the St. Regis Hotel:\n\n Sanford I. Weill   Citigroup, Inc.   Chairman and CEO\n Hendrick Verfaille  Monsanto Co.   President and CEO\n William B Harrison, Jr.  Chase Manhattan Corp.  Chairman and CEO\n Raymond V. Gilmartin  Merck and Company, Inc. Chairman and CEO\n Michael Armstrong  AT&T    Chairman and CEO\n Stephen M. Wolf  US Airways   Chairman and CEO\n Kenneth L. Lay   Enron Corp.   Chairman and CEO\n\nPending confirmation\n Douglas A. Warner III  J.P. Morgan   Chairman\n\nAccording to Federico, if there is any late cancellation, no one will be \nsubstituted. Also, there is a small possibility that\nthe dinner could take place in Washington, rather than N.Y., based on Fox's \nmeeting with President Clinton; they are still\nworking on the final agenda. \n \n Max and myself are working on the background information that you will need, \nand will keep you posted of any \nchanges; best regards,  jaime____\n",
+    "mid": "11395510.1075840285634.JavaMail.evans@thyme",
+    "fpath": "enron_mail_20110402/maildir/lay-k/_sent/102.",
+    "bcc": [
+      "myzagui@ect.enron.com",
+      "steven.kean@enron.com"
+    ],
+    "to": [
+      "jaime.alatorre@enron.com"
+    ],
+    "replyto": null,
+    "ctype": "text/plain; charset=us-ascii",
+    "fname": "102.",
+    "date": "2000-08-08 05:54:00-07:00",
+    "folder": "_sent",
+    "subject": "Re: Dinner with V. Fox"
+  }
+
+  </script>
+
+  <div class="container">
+    <div class="emails">
+      <div class="row">
+        <div class="col-sm-3">From</div>
+        <div class="col-sm-3">To</div>
+        <div class="col-sm-4">Subject</div>
+        <div class="col-sm-2">Date</div>
+      </div>
+      <div each="email, email.id in model.emails" class="{ 'email' + (email.checked ? ' checked' : '') }">
+        <div class="row" onclick="{email.checked = !email.checked}">
+          <div class="col-sm-3">{email.sender}</div>
+          <div class="col-sm-3">{email.to.length && email.to[0]}</div>
+          <div class="col-sm-4">{email.subject}</div>
+          <div class="col-sm-2">{email.date.toLocaleDateString()}</div>
+        </div>
+        <div class="email-details" if="email.checked">
+          <div class="well">
+            <div if="email.recipients.length">
+              <ul class="list-inline">
+                <li><h6>To</h6></li>
+                <li each="recipient in email.recipients"><a href="{'mailto:' + recipient}">{recipient}</a></li>
+              </ul>
+            </div>
+            <div if="email.cc.length">
+              <ul class="list-inline">
+                <li><h6>Cc</h6></li>
+                <li each="cc in email.cc"><a href="{'mailto:' + cc}">{cc}</a></li>
+              </ul>
+            </div>
+            <div if="email.bcc.length">
+              <ul class="list-inline">
+                <li><h6>Bcc</h6></li>
+                <li each="bcc in email.bcc"><a href="{'mailto:' + bcc}">{bcc}</a></li>
+              </ul>
+            </div>
+          </div>
+          <pre>{email.text}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>
